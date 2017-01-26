@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>京东详情页</title>
+<link rel="stylesheet" type="text/css" href="css/basic_2.css"/>
+<style>
+
+</style>
+<script src="js/detail.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<!--登陆和收藏-->
+<div id="top">
+   	<div id="top_bar">   		
+   		    <img src="image/star.jpg" />
+   			<a href="javascript:void(0)">送至:北京</a>
+   			<ul class="rt">
+   				<li>
+   				<a href="#">你好，请登录</a>
+                <a href="#">免费注册</a>
+   				</li>
+   				<li>
+   				    <b></b><!--添加灰色小竖线-->
+   					<a href="#">我的订单</a>
+   				</li>
+   				<li>
+   				    <b></b>
+   					<a href="#">我的京东</a>
+   				</li>
+   				<li>
+   				    <b></b>
+   					<a href="#">京东会员</a>
+   				</li>
+   				<li>
+   				    <b></b>
+   					<a href="#">企业采购</a>
+   				</li>
+   				<li id="cellphone">
+   				    <b></b> 
+   				    <span><a href="#">手机京东</a></span>
+   				</li>
+   				<li id="twoD_code" onmouseover="showHide('twoD_image','block')" onmouseout="showHide('twoD_image','none')">
+   				    <b></b>
+   					<a href="#">关注京东</a>
+   					
+   						<img src="image/2d code.jpg" id="twoD_image">
+   					
+
+   				</li>
+   				<li id="customer" onmouseover="showHide('customer_dropdown','block')" onmouseout="showHide('customer_dropdown','none')">
+   				    <b></b>
+   					<a href="#" id="customer_service">客户服务</a>
+   					<div class="customer_dropdown" id="customer_dropdown">
+   						<div class="item_client">
+   						<div id="customer01">客户</div>
+   							<ul class="item_client_left">
+   								<li><a href="#">帮助中心</a></li>
+   								<li><a href="#">在线客服</a></li>
+   								<li><a href="#">电话客服</a></li>
+   								<li><a href="#">金融咨询</a></li>
+   							</ul>
+   							<ul class="item_client_right">
+   								<li><a href="#">客户服务</a></li>
+   								<li><a href="#">意见建议</a></li>
+   								<li><a href="#">客服邮箱</a></li>
+   							</ul>
+   						</div>
+                    
+   						<div class="item_business">
+   						<div id="client01">
+   						商户
+   						</div>
+                            <ul class="item_business_detail">
+                            	<li><a href="#">京东商学院</a></li>
+                            	<li><a href="#">商家入驻</a></li>
+                            </ul>
+   						</div>
+   					
+   					</div>
+   				</li>
+   				<li id="site_map"  onmouseover="showHide('site_map_dropdown','block')" onmouseout="showHide('site_map_dropdown','none')">
+   				    <b></b>
+   					<a href="#">网站导航</a>
+   					<div id="site_map_dropdown">
+   						<div id="theme">
+   						<h3>特色主题</h3>
+   							<table>
+   								<tr>
+   									<td>品牌街</td>
+   									<td>闪购</td>
+   									<td>优惠100</td>
+   									<td>折800</td>
+   								</tr>
+   								<tr>
+   									<td>双十一</td>
+   									<td>特惠</td>
+   									<td>天天优惠</td>
+   									<td>日日特价</td>
+   								</tr>
+   								<tr>
+   									<td>京东</td>
+   									<td>淘宝</td>
+   									<td>苏宁</td>
+   									<td>天猫</td>
+   								</tr>
+   							</table>
+   						</div>
+   						<div id="industry">
+   						<h3>行业新闻</h3>
+   							<table>
+   								<tr>
+   									<td>品牌街</td>
+   									<td>闪购</td>
+   									<td>优惠100</td>
+   									<td>折800</td>
+   								</tr>
+   								<tr>
+   									<td>双十一</td>
+   									<td>特惠</td>
+   									<td>天天优惠</td>
+   									<td>日日特价</td>
+   								</tr>
+   								<tr>
+   									<td>京东</td>
+   									<td>淘宝</td>
+   									<td>苏宁</td>
+   									<td>天猫</td>
+   								</tr>
+   							</table>
+   						</div>
+   						
+   						<div id="life">
+   						<h3>生活资讯</h3>
+   							<table>
+   								<tr>
+   									<td>品牌街</td>
+   									<td>闪购</td>
+   									<td>优惠100</td>
+   									<td>折800</td>
+   								</tr>
+   								<tr>
+   									<td>双十一</td>
+   									<td>特惠</td>
+   									<td>天天优惠</td>
+   									<td>日日特价</td>
+   								</tr>
+   								<tr>
+   									<td>京东</td>
+   									<td>淘宝</td>
+   									<td>苏宁</td>
+   									<td>天猫</td>
+   								</tr>
+   							</table>
+   						</div>
+   						<div id="more">
+   						<h3>更多资讯</h3>
+   							<table>
+   								<tr>
+   									<td>品牌街</td>
+   									<td>闪购</td>
+   									<td>优惠100</td>
+   									<td>折800</td>
+   								</tr>
+   								<tr>
+   									<td>双十一</td>
+   									<td>特惠</td>
+   									<td>天天优惠</td>
+   									<td>日日特价</td>
+   								</tr>
+   								<tr>
+   									<td>京东</td>
+   									<td>淘宝</td>
+   									<td>苏宁</td>
+   									<td>天猫</td>
+   								</tr>
+   							</table>
+   						</div>
+   					</div>
+   				</li>
+   			</ul>  		
+   	</div>
+</div>
+<!--logo和搜索-->
+<div id="search">
+	<div>
+	<img src="image/logo.png" class="lt"/>
+	</div>
+	<div id="search_box" class="lt">
+		<div id="press">
+			<input type="text" onfocus="showHide('press_dropdown','block')" onblur="showHide('press_dropdown','none')"/>
+			<div id="press_dropdown" >
+			<p>
+				<a href="#" class="lt">男士风衣</a>
+				<span class="rt">约3250个商品</span>
+			</p>
+			<p>
+				<a href="#" class="lt">男士皮鞋</a>
+				<span class="rt">约3250个商品</span>
+			</p>
+			<p>
+				<a href="#" class="lt">男士风衣</a>
+				<span class="rt">约3250个商品</span>
+			</p>
+			<p>
+				<a href="#" class="lt">女式大衣</a>
+				<span class="rt">约3250个商品</span>
+			</p>
+				
+			</div>
+			<input type="button" value="搜索" name="keywords" />
+		</div>
+		<div>
+			<ul class="lt">
+				<li>Apple产品</li>
+				<li>相机大全</li>
+				<li>京东智能</li>
+				<li>虚拟现实</li>
+				<li>iMac</li>
+				<li>iPhone</li>
+			</ul>
+		</div>
+	</div>
+	<div id="search_shopped" class="rt" onmouseover="showHide('shopped_dropdown','block')" onmouseout="showHide('shopped_dropdown','none')">
+	<i class="shop_left"></i>
+	我的购物车
+	<i class="shop_right"></i>
+	<div id="shopped_dropdown">
+		<p>购物车还没有商品,赶快败家吧！</p>
+	</div>
+	</div>
+</div>
+
+<!--导航栏-->
+<div id="nav">
+   <div id="nav_content">
+	<div id="nav_list">
+   <span>全部商品分类</span>
+   </div>
+   <div id="content_dropdown">
+      <ul>
+         <li></li>
+      </ul>
+   </div>
+   <div id="nav_detail">
+   <ul id="nav1">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">服装城</a></li>
+      <li><a href="#">美妆馆</a></li>
+      <li><a href="#">京东超市</a></li>
+      <li><a href="#">生鲜</a></li>
+      <li><a href="#">全球购</a></li>
+   </ul>
+   <ul id="nav2">
+      <li><a href="#">闪购</a></li>
+      <li><a href="#">拍卖</a></li>
+      <li><a href="#">金融</a></li>
+   </ul>
+   <div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--主体区域-->
+<div id="main">
+	<div id="main_intro">
+    <div id="intro_path">
+       <strong><a href="#">数码</a></strong>&nbsp;&nbsp;>&nbsp;&nbsp;
+       <span><a href="#">摄影摄像</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="#">单反相机</a>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+       <span><a href="#">佳能（Canon）</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="#">佳能6D</a></span>
+    </div>
+    <div id="intro_detail">
+    <div id="intro_pic">
+       <div id="big_pic">
+          <a href="#" id="big_pic01"><img src="image/canon01.jpg" /></a>
+          <a href="#" id="big_pic02"><img src="image/canon02.jpg" /></a>
+          <a href="#" id="big_pic03"><img src="image/canon03.jpg" /></a>
+          <a href="#" id="big_pic04"><img src="image/canon04.jpg" /></a>
+          <a href="#" id="big_pic05"><img src="image/canon05.jpg" /></a>
+       </div>
+       <div id="small_pic">
+          <a></a>
+          <div id="small_pic_list">
+          <a href="#"  onmouseover='onmouseShow("big_pic01")'><img src="image/canon01_min.jpg" id="small_pic01"/></a>
+          <a href="#"><img src="image/canon02_min.jpg" id="small_pic02"/></a>
+          <a href="#"><img src="image/canon03_min.jpg" id="small_pic03"/></a>
+          <a href="#"><img src="image/canon04_min.jpg" id="small_pic04"/></a>
+          <a href="#"><img src="image/canon05_min.jpg" id="small_pic05"/></a>
+          </div>
+          <a></a>
+       </div>
+       <div id="share01">
+          <a href="#">
+             <b></b>
+             分享
+          </a>
+          <a href="#" id="focus">
+             <b></b>
+             关注商品
+          </a>
+          <div id="jubao"><a href="#">举报</a></div>
+       </div>
+
+    </div>
+    <div id="intro_content">
+    <div id="content_top">
+      <div id="top_title">
+       <h3>佳能（Canon） EOS 6D 单反套机（EF 24-105mm f/4L IS USM 镜头）</h3>
+       <p>【6期白条免息】【京东自营更放心】全幅与wifi兼得性价比神机圆你摄影大师梦！</p>
+       </div>
+       <div id="compare">
+       <input type="button" value="对比" />
+       </div>
+    </div>
+      <div id="price">
+         <div id="price_left">
+            <p><span>京&nbsp;&nbsp;&nbsp;东&nbsp;&nbsp;&nbsp;价&nbsp;:</span><span>￥12999.00</span>(降价通知)</p>
+            <div id="promote_info">
+            <div id="promote">
+            <div>
+            <span>促&nbsp;销&nbsp;信&nbsp;息&nbsp;:</span><span class="spanColor">赠品</span>
+            </div>
+              <ul>
+                 <li><img src="image/promote_gift01.jpg">&nbsp;*1&nbsp;</li>
+                 <li><img src="image/promote_gift02.jpg">&nbsp;*1&nbsp;</li>
+                 <li><img src="image/promote_gift03.jpg">&nbsp;*1&nbsp;</li>
+                 <li><img src="image/promote_gift04.jpg">&nbsp;*1&nbsp;</li>
+              </ul>
+              <span>（赠完为止）</span>
+              </div>             
+              <div id="purchase_limit">
+              <span  class="spanColor">限购</span>仅购买1件时享受优惠，超出数量以结算价为准
+              </div>
+            </div>             
+         </div>
+         <div id="price_right">
+            <div id="comment">
+               <p>累计评价</p>
+               <span>6300+</span>
+            </div>
+            <div id="comment_promote">
+               共<span>3</span>项促销<i></i>
+            </div>
+            </div>
+            </div>
+            <div id="support">
+               <div>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持&nbsp;:</div>
+               <ul>
+                  <li><a href="#"><span></span>以旧换新，闲置相机回收</a></li>
+                  <li><a href="#"><span></span>礼品购</a></li>
+               </ul>
+            </div>
+            <div id="address">
+               <div>配&nbsp;&nbsp;&nbsp;送&nbsp;&nbsp;&nbsp;至&nbsp;:</div>
+               <div id="address_show">
+                    <p>上海</p>
+                    <div id="address_list"></div>
+                     </div>
+               <span>有货</span>，下单后2到6天发货
+            </div>
+            <div id="service">
+               <div>
+               服&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务&nbsp;:
+               </div>
+               由京东发货，并提供售后服务
+            </div>
+         <div id="purchase">
+         <div id="choose_edition">
+            <div class="purchase_title">选&nbsp;择&nbsp;版&nbsp;本&nbsp;:</div>
+            <ul class="lt">
+            <li  class="purchase_choice">机身</li>
+            <li  class="purchase_choice">配24-105mm</li>
+            <li  class="purchase_choice">配24-70/f4</li>
+            <li  class="purchase_choice">配16-35mm</li>
+            <li  class="purchase_choice">配70-200</li>   
+            </ul>
+         </div>
+         <div id="value_keep">
+            <div class="purchase_title">增&nbsp;值&nbsp;保&nbsp;障&nbsp;:</div>
+            <ul class="lt">
+            <li class="purchase_choice">意外保险1年 ￥299</li>
+            <li class="purchase_choice">意外保险1年 ￥299</li>
+            <li class="purchase_choice">意外保险1年 ￥299</li>   
+            </ul>
+            <span></span>
+         </div>
+       
+         <div id="white_paper">
+         <div class="purchase_title">
+            白&nbsp;条&nbsp;分&nbsp;期&nbsp;:
+         </div>
+            <ul class="lt">
+               <li class="purchase_choice">30天免息</li>
+               <li class="purchase_choice">￥4433*3期</li>
+               <li class="purchase_choice">￥4433*3期</li>
+               <li class="purchase_choice">￥4433*3期</li>
+               <li class="purchase_choice">￥4433*3期</li>
+            </ul>
+            
+            <b></b>
+            <span></span>
+         </div>
+         <div id="purchase_confirm">
+            <input type="text">
+            <span></span>
+            
+         </div>
+         <div id="reminder">
+         <div class="purchase_title">
+            温&nbsp;馨&nbsp;提&nbsp;示&nbsp;:
+         </div>
+            <span>1. 支持7天无理由退货</span>
+         </div>
+      
+         </div>
+
+      </div>
+       <div id="intro_store">
+       <div id="canon_logo">
+          <img src="image/canon_logo.jpg" />
+       </div>
+       <div id="logo_txt">
+          <a href="#">佳能影像官方旗舰店</a>
+          <span>京东自营</span>
+       </div>
+       <div id="supplier_entrance">
+          <div id="entrance_row1">
+             <span class="shop_item"><i class="entrance_i"></i>联系供应商</span>
+             <span class="shop_item"><i class="entrance_i"></i>咨询JIMI</span>
+          </div>
+          <div id="entrance_row2">
+            <span class="shop_item"><i class="entrance_i"></i>进店逛逛</span>
+            <span class="shop_item"><i class="entrance_i"></i>关注店铺</span>
+          </div>
+       </div>
+    </div>  
+   </div>
+      </div>
+      <!--推荐购买搭配-->
+<div id="recommend">
+   <div id="rem_option">
+      <ul>
+      <li>推荐配件</li>
+      <li>优惠套装</li>
+      <li>最佳组合</li>
+      </ul>
+   </div>
+      <div id="peijian">
+         
+         <div id="rem_txt">
+            <ul>
+               <li><a href="#">推荐配件</a></li>
+               <li><a href="#">相机包</a></li>
+               <li><a href="#">滤镜</a></li>
+               <li><a href="#">三脚架/云台</a></li>
+               <li><a href="#">闪光灯/手柄</a></li>
+               <li><a href="#">相机清洁</a></li>
+               <li><a href="#">相机配件</a></li>
+               <li><a href="#">电池/充电器</a></li>
+               <li><a href="#">镜头附件</a></li>
+               <li><a href="#">存储卡</a></li>
+               <li><a href="#">镜头</a></li>
+               <li><a href="#">读卡器</a></li>
+            </ul>
+         </div>
+         <div id="rem_purchased" class="lt">
+            <img src="image/canon01_medium.jpg" />
+            <p>佳能（Canon）EOS 6D 单反套机</p>
+            <span></span>
+         </div>
+         <div id="rem_list" class="lt">
+         <ul>
+         <li>
+            <img src="image/rem_list01.jpg" />
+            <p>乐摄宝（Lowepro）Form at 160 单反相机包F160单</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多相机包</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list02.jpg" />
+            <p>保谷（HOYA）uv镜 滤镜 UV镜 77mm HMC UV</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多滤镜</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list03.jpg" />
+            <p>思锐（SIRUI）三脚架E1 00 5A+G12铝材反折脚架</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多三脚架/云台</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list04.jpg" />
+            <p>斯丹德(sidande) DF-800高速同步1/8000单反相机</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多相机</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list04.jpg" />
+            <p>斯丹德(sidande) DF-800高速同步1/8000单反相机</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多相机</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list04.jpg" />
+            <p>斯丹德(sidande) DF-800高速同步1/8000单反相机</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多相机</a>
+            <span></span>
+         </li>
+         <li>
+            <img src="image/rem_list04.jpg" />
+            <p>斯丹德(sidande) DF-800高速同步1/8000单反相机</p>
+            <div>
+               <input type="checkbox" >￥99.0
+            </div>
+            <a href="#">更多相机</a>
+            
+         </li>
+         </ul>
+         </div>
+         <div id="rem_buy" class="rt">
+            <div id="equal_icon" class="lt"></div>
+            <ul  class="lt">
+               <li>配件选购中心&nbsp;<span>></span></li>
+               <li>已选择0个配件</li>
+               <li>搭配价:<span>￥13299.00</span></li>
+               
+            </ul>
+            <input type="button" value="立即购买" />
+         </div>
+      </div>
+      <div id="taozhuang">
+      
+      </div>
+      <div id="zuhe">
+           
+      </div>
+   </div>
+    </div>
+
+
+
+</div>
+<!--猜你喜欢-->
+<div id="may_like">
+	<div id="may_like_txt">
+		<h2>猜你喜欢</h2>
+		<span>1/4</span>
+	</div>
+	<div id="may_like_pic">
+		<ul>
+			<li><img src="image/like01.jpg" /><p>￥9280.00</p></li>
+			<li><img src="image/like02.jpg" /><p>￥3999.00</p></li>
+			<li><img src="image/like03.jpg" /><p>￥12999.00</p></li>
+			<li><img src="image/like04.jpg" /><p>￥5678.00</p></li>
+			<li><img src="image/like05.jpg" /><p>￥2500.00</p></li>
+			<li><img src="image/like06.jpg" /><p>￥3600.00</p></li>
+			<li><img src="image/like07.jpg" /><p>￥4800.00</p></li>
+			<li><img src="image/like08.jpg" /><p>￥30000.00</p></li>
+			<li><img src="image/like09.jpg" /><p>￥12999.00</p></li>
+			<li><img src="image/like10.jpg" /><p>￥46800.00</p></li>
+			<li><img src="image/like11.jpg" /><p>￥39000.00</p></li>
+			<li><img src="image/like12.jpg" /><p>￥45000.00</p></li>
+		</ul>
+	</div>
+</div>
+<!--购物指南-->
+<div id="guide">
+	<div id="guide_pic">
+		<img src="image/guide01.png" />
+		<img src="image/guide02.png" />
+		<img src="image/guide03.png" />
+		<img src="image/guide04.png" />
+	</div>
+	<div id="guide_txt">
+	  <div>
+	  	<p>购物指南</p>
+	  	<ul>
+	  		<li><a href="#">购物流程</a></li>
+	  		<li><a href="#">会员介绍</a></li>
+	  		<li><a href="#">生活旅行/团购</a></li>
+	  		<li><a href="#">常见问题</a></li>
+	  		<li><a href="#">大家电</a></li>
+	  		<li><a href="#">联系客服</a></li>
+	  	</ul>
+	  </div>
+	   <div>
+	  	<p>配送方式</p>
+	  	<ul>
+	  		<li><a href="#">上门自提</a></li>
+	  		<li><a href="#">211限时达</a></li>
+	  		<li><a href="#">配送服务查询</a></li>
+	  		<li><a href="#">配送费收取标准</a></li>
+	  		<li><a href="#">海外配送</a></li>
+	  	</ul>
+	  </div>
+	   <div>
+	  	<p>支付方式</p>
+	  	<ul>
+	  		<li><a href="#">货到付款</a></li>
+	  		<li><a href="#">在线支付</a></li>
+	  		<li><a href="#">分期付款</a></li>
+	  		<li><a href="#">邮局汇款</a></li>
+	  		<li><a href="#">公司转账</a></li>	  		
+	  	</ul>
+	  </div>
+	   <div>
+	  	<p>售后服务</p>
+	  	<ul>
+	  		<li><a href="#">售后政策</a></li>
+	  		<li><a href="#">价格保护</a></li>
+	  		<li><a href="#">退款说明</a></li>
+	  		<li><a href="#">返修/退换货</a></li>
+	  		<li><a href="#"></a>取消订单</li>
+	  	</ul>
+	  </div>
+	   <div>
+	  	<p>特色服务</p>
+	  	<ul>
+	  		<li><a href="#">夺宝岛</a></li>
+	  		<li><a href="#">DIY装机</a></li>
+	  		<li><a href="#">延保服务</a></li>
+	  		<li><a href="#">京东E卡</a></li>
+	  		<li><a href="#">京东通信</a></li>
+	  		<li><a href="#">京东JD+</a></li>
+	  	</ul>
+	  </div>
+	</div>
+</div>
+<!--页脚-->
+<div id="footer">
+	<p>
+		<a href="#">关于我们</a>|
+		<a href="#">联系我们</a>|
+		<a href="#">商家入驻</a>|
+		<a href="#">营销中心</a>|
+		<a href="#">手机京东</a>|
+		<a href="#">友情链接</a>|
+		<a href="#">销售联盟</a>|
+		<a href="#">手机社区</a>|
+		<a href="#">京东公益</a>|
+		<a href="#">English Site</a>|
+		<a href="#">Contact Us</a>|
+		<a href="#">关于我们</a>
+	</p><br>
+	<p>
+		北京市公安局朝阳分局备案编号110105014669  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号
+	</p>
+	<p>
+		音像制品经营许可证苏宿批005号  |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号
+	</p>
+	<p>
+		网络文化经营许可证京网文[2014]2148-348号  违法和不良信息举报电话：4006561155  Copyright © 2004-2016  京东JD.com 版权所有
+	</p>
+	<p>
+		京东旗下网站：京东钱包
+	</p><br>
+	<a href="#"><img src="image/footer01.png" /></a>
+	<a href="#"><img src="image/footer02.png" /></a>
+	<a href="#"><img src="image/footer03.jpg" /></a>
+	<a href="#"><img src="image/footer04.png" /></a>
+	<a href="#"><img src="image/footer05.jpg" /></a>
+	<a href="#"><img src="image/footer06.jpg" /></a>
+</div>
+
+</body>
+</html>

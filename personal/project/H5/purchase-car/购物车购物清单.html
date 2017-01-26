@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+#purchaseList table{
+  width:600px;
+  margin:0 auto;
+  font-family: "微软雅黑";
+}
+#purchaseList table tr td{
+  width:180px;
+  height:24px;
+  border:1px solid grey;
+  text-align: center;
+  color:white;
+  background:#B2191B;
+  font-weight:bold;
+}
+.qty{
+  
+}
+</style>
+
+<script src="js/purchaseList.js"></script>
+</head>
+<body>
+  <div id="purchaseList">
+    <table>
+      <thead>
+        <tr>
+          <td>商品名称</td>
+          <td>价格</td>
+          <td>数量</td>
+        </tr>
+      </thead>
+      <tbody id="tBody">
+        <tr id="total">
+          <td>总计</td>
+          <td id="total_sum">0</td>
+          <td id="total_qty">0</td>
+        </tr>
+        <tr>
+          <td>
+          <input type="button" value="清空购物车"  id="clear"/>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+
+  function $(id){
+    return document.getElementById(id);
+  }
+  
+   function initial(){
+      
+    }
+   window.addEventListener("load",initial,false);
+  
+  
+  
+  </script>
+</body>
+</html>

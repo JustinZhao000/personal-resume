@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+*{
+    margin:0;
+    padding:0;
+    font-family: "微软雅黑";
+}
+#goods{
+  width:910px;
+}
+.goodsItem{
+  width:280px;
+  height:400px;
+  float:left;
+  margin:5px;
+  border:1px solid #ccc;
+}
+.godItem{
+  list-style: none;
+}
+.godItem img{
+  width:250px;
+  height:250px;
+  display:block;
+  margin:0 auto;
+}
+.godPrice,.godInfo,.godAdd{
+  display:block;
+  width:220px;
+  margin:0 auto;
+  text-align:center;
+}
+.godPrice{
+  font-size: 20px;
+  color:#f00;
+}
+.godInfo{
+  font-size: 14px;
+  margin:10px auto;
+  text-align:center;
+}
+.godAdd a{
+  display:block;
+  width:150px;
+  height:36px;
+  background:#fd6a01;
+  border-radius: 10px;
+  margin:0 auto;
+  text-decoration:none;
+  color:#fff;
+  line-height:36px;
+}
+#godCar{
+  position:fixed;
+  top:40%;
+  right:0;
+  width:72px;
+  height:64px;
+  background:#808080;
+}
+#dnum{
+    width:24px;
+    height:24px;
+    border-radius: 12px;
+    background:#f00;
+    text-align:center;
+    line-height: 24px;
+    position:absolute;
+    font-size: 12px;
+    top:0;
+}
+</style>
+<script src="js/purchaseCar.js"></script>
+</head>
+<body>
+  <div id="goods">
+    <div class="goodsItem">
+      <ul class="godItem">
+        <li class="godPic"><img src="image/like01.jpg" id="image1"/></li>
+        <li class="godPrice">25.00</li>
+        <li class="godInfo">飞鸟集</li>
+        <li class="godAdd"><a href="javascript:;">加入购物车</a></li>
+      </ul>
+    </div>
+    <div class="goodsItem">
+      <ul class="godItem">
+        <li class="godPic"><img src="image/like02.jpg" /></li>
+        <li class="godPrice">35.00</li>
+        <li class="godInfo">杨家将</li>
+        <li class="godAdd"><a href="javascript:;">加入购物车</a></li>
+      </ul>
+    </div>
+    <div class="goodsItem">
+      <ul class="godItem">
+        <li class="godPic"><img src="image/like03.jpg" /></li>
+        <li class="godPrice">45.00</li>
+        <li class="godInfo">平凡的世界</li>
+        <li class="godAdd"><a href="javascript:;">加入购物车</a></li>
+      </ul>
+    </div>
+    <div class="goodsItem">
+      <ul class="godItem">
+        <li class="godPic"><img src="image/like01.jpg" /></li>
+        <li class="godPrice">85.00</li>
+        <li class="godInfo">人生</li>
+        <li class="godAdd"><a href="javascript:;">加入购物车</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="godCar">
+    <a href="购物车购物清单.html">
+    <div id="dnum">0</div>
+    </a>
+  </div>
+ 
+</body>
+</html>

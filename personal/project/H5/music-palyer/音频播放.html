@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+section{
+  height:380px;
+  width:600px;
+  margin:0 auto;
+  position:relative;
+  background:#C1C1C1;
+  border-radius: 10px;
+  border:2px solid #1B1D1C;
+}
+section video{
+  position:absolute;
+  margin:5px 10px;
+}
+nav{
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:580px;
+  height:30px;
+}
+nav div{
+   float:left;
+}
+#go{
+  width:50px;
+  height:25px;
+  border-radius:5px;
+  font-weight: bold;
+}
+#progress{
+  width:520px;
+  height:15px;
+  border:1px solid #999999;
+  background:white;
+  float:left;
+  position:relative;
+  margin:2px 0 0 5px;
+  border-radius:15px; 
+  overflow: hidden; 
+}
+#actual_pro{
+  width:0px;
+  height:15px;
+  background:#DCDCDC;
+  position:absolute;
+  border-radius:15px;
+ 
+}
+#songList{
+   position:absolute;
+   top:40px;
+   left:40px;
+   height:300px;
+   width:500px;
+   background:#5C84FD;
+   border-radius: 10px; 
+   font-family: "微软雅黑";
+}
+#songList ul{
+  list-style: none;
+  position:absolute;
+  top:20px;
+  left:20px;
+  
+}
+#songList ul li{
+   margin-top:10px;
+}
+#songList ul li a{
+  color:white;
+  text-decoration: none;
+  padding:10px;
+}
+#songList ul li a:hover{
+  color:yellow;
+  font-size: 20px;
+}
+#switch{
+  font-size:20px;
+  
+  position:absolute;
+  right:20px;
+  bottom:20px;
+}
+#mName{
+  position:absolute;
+  top:5px;
+  left:10px;
+
+}
+</style>
+</head>
+<body>
+  <section>
+    <audio width="580" height="50" id="media" src="music/换大米进行曲2.5.mp3"></audio>
+    <nav>
+      <div>
+      <input type="button" value="播放" id="go"/>
+      </div>
+      <div id="progress">
+        <div id="actual_pro"></div>
+      </div>
+    </nav>
+       
+    
+      
+      <div id="songList">
+        <ul id="songUl">
+          <li><a href="javascript:play();">换大米</a></li>
+          <li><a href="javascript:play();">好久不见</a></li>
+          <li><a href="javascript:play();">想哭</a></li>
+        </ul>
+        <div id="switch">
+           <a href="javascript:loadMusic();">换歌</a>
+        </div>
+      </div>
+    </nav>
+
+  </section>
+  <script>
+  function $(id){
+    return document.getElementById(id);
+  }
+  var musicNames=[],musicSrcs=[],randomNums=[];
+  var RANDOMNUM=3;
+   function initial(){
+    //按钮控制播放
+   $("go").onclick=function(){
+      if($("go").value=="播放"){
+        $("media").play();
+        $("go").value="暂停";
+        var time=$("media").duration;
+        step=520/time;
+        timer=setInterval(function(){
+            var total=$("media").currentTime*step;          
+            $("actual_pro").style.width=total+"px";
+        },1000)
+      }else if($("go").value=="暂停"){
+        $("media").pause();
+        $("go").value="播放";
+        clearInterval(timer);
+      }else if($("media").ended){
+         clearInterval(timer);
+      }
+   }
+      
+ 
+    //随机更换歌单
+    /*  $("switch").onclcik=function(){
+            loadMusic();
+      } */
+ }
+
+function play(name,src){
+     //更新歌曲名称
+     $("mName").innerHTML=name;
+     //更新audio.src
+     $("media").src=src;
+     $("media").paly();
+
+}
+
+    var musicNames=[],musicSrcs=[],randomNums=[];
+    var RANDOMNUM=3;  
+ //歌曲名字
+    musicNames[0]="换大米.mp3";
+    musicNames[1]="好久不见.mp3";
+    musicNames[2]="想哭.mp3";
+    musicNames[3]="女人的选择.mp3";
+    musicNames[4]="K歌之王.mp3";
+    musicNames[5]="淘汰.mp3";
+    //歌曲地址
+    musicSrcs[0]="music/换大米进行曲2.5.mp3";
+    musicSrcs[1]="music/换大米进行曲2.5.mp3";
+    musicSrcs[2]="music/换大米进行曲2.5.mp3";
+    musicSrcs[3]="music/换大米进行曲2.5.mp3";
+    musicSrcs[4]="music/换大米进行曲2.5.mp3";
+    musicSrcs[5]="music/换大米进行曲2.5.mp3";  
+ /* function chooseMusics(){      
+    //获取元素
+    //Math.random()
+    generateNum();
+    //绑定事件
+    loadMusic();
+    paly();
+  }*/
+  //生成随机数
+  function generateNum(){
+       var i=0;
+       for(;;){
+        var random0=parseInt(Math.random()*musicNames.length);
+        //判断random0是否已经存在
+        if(checkRandom0(random0)){
+              continue;
+        }
+          //将random0加入randomNums中，i++
+          randomNums[i]=random0;
+          i++;
+        if(i==RANDOMNUM){
+          return;
+        }
+        
+       }
+   }
+   //审查随机数
+   function checkRandom0(r){
+    for(var i=0;i<randomNums.length;i++){
+      if(randomNums[i]==r){
+        return true;
+      }else{
+        return false;
+      }
+    }
+   }
+   //载入歌单
+   function loadMusic(){
+      $("songUl").innerHTML="";
+      generateNum();
+      for(var i=0;i<randomNums.length;i++){
+      //获取歌曲名称
+      //生成<li><a>歌曲名称</a></li>
+
+      //1.获取歌曲名称，路径
+      var mName=musicNames[randomNums[i]];
+      var mSrc=musicSrcs[randomNums[i]];
+      //2.构建a标签
+      var aTar=document.createElement("a");
+      aTar.innerHTML=mName;
+      aTar.setAttribute("href","javascript:paly('"+mName+"','"+mSrc+"');");
+      //3.将a标签添加到li中
+      var liTar=document.createElement("li");
+      liTar.appendChild(aTar);
+      //4.将li添加到ul中
+      $("songUl").appendChild(liTar);
+    }
+   }
+ 
+   window.addEventListener("load",initial,false);
+  
+  
+  
+  </script>
+</body>
+</html>

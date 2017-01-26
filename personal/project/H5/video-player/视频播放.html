@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+section{
+  height:380px;
+  width:600px;
+  margin:0 auto;
+  position:relative;
+  background:#C1C1C1;
+  border-radius: 10px;
+  border:2px solid #1B1D1C;
+}
+section video{
+  position:absolute;
+  margin:5px 10px;
+}
+nav{
+  position:absolute;
+  top:350px;
+  left:10px;
+  width:580px;
+  height:30px;
+}
+nav div{
+   float:left;
+}
+#go{
+  width:50px;
+  height:25px;
+  border-radius:5px;
+  font-weight: bold;
+}
+#progress{
+  width:520px;
+  height:15px;
+  border:1px solid #999999;
+  background:white;
+  float:left;
+  position:relative;
+  margin:2px 0 0 5px;
+  border-radius:15px; 
+  overflow: hidden; 
+}
+#actual_pro{
+  width:0px;
+  height:15px;
+  background:#DCDCDC;
+  position:absolute;
+  border-radius:15px;
+ 
+}
+</style>
+</head>
+<body>
+  <section>
+    <video width="580" height="350" id="media">
+      <source src="乌兰巴托的夜@Justin Zhao_超清.mp4" />
+    </video>
+    <nav>
+      <div>
+      <input type="button" value="播放" id="go"/>
+      </div>
+      <div id="progress">
+        <div id="actual_pro"></div>
+      </div>
+    </nav>
+  </section>
+  <script>
+  function $(id){
+    return document.getElementById(id);
+  }
+   function initial(){
+   $("go").onclick=function(){
+      if($("go").value=="播放"){
+        $("media").play();
+        $("go").value="暂停";
+        var time=$("media").duration;
+        step=520/time;
+        timer=setInterval(function(){
+            var total=$("media").currentTime*step;
+           
+             $("actual_pro").style.width=total+"px";
+        },1000)
+      }else if($("go").value=="暂停"){
+        $("media").pause();
+        $("go").value="播放";
+        clearInterval(timer);
+      }else if($("media").ended){
+         clearInterval(timer);
+      }
+   }
+   //点击设置视频播放位置
+   $("progress").onclick=function(e){
+       var positionX=e.offsetX;
+       $("actual_pro").style.width=positionX;
+       $("media").currentTime=positionX/step;
+   }
+}     
+
+   window.addEventListener("load",initial,false);
+  
+  </script>
+</body>
+</html>

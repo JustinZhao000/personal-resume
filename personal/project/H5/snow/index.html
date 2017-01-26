@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body style="overflow: hidden;margin: 0; padding: 0;">
+    <canvas id="canvas" style="background:url(image/snow.jpg);background-size:100% 100%;">您的浏览器暂不支持canvas</canvas>
+<script>
+var canvas=document.getElementById("canvas");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+var ctx=canvas.getContext("2d");
+var balls=[];
+function draw(ball){
+  ctx.beginPath();
+  ctx.arc(ball.x,ball.y,ball.r,0,2*Math.PI);
+  ctx.globalAlpha=0.7;
+  ctx.fillStyle="#ffffff";
+  ctx.shadowColor="#ffffff";
+  ctx.shadowBlur=20;
+  ctx.fill();
+}
+function star(){
+  for(var i=0;i<1;i++){
+    var ball={
+      x:Math.random()*canvas.width/2+canvas.width/2,
+      y:0,
+      r:Math.random()*4,
+      vx:Math.random()-0.5,
+      vy:Math.random()+1,
+    }
+    
+    balls.push(ball); 
+  }
+  drawball();
+}
+function drawball(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for(var i=0;i<balls.length;i++){
+    balls[i].x+=balls[i].vx*5;//改变x轴位置
+    balls[i].y+=balls[i].vy*2;//Y轴        
+    balls[i].index=i;
+    if(balls[i].y>canvas.height/1.7){
+      balls.splice(balls[i].index,1);
+      continue;
+    }
+    draw(balls[i]);
+  }
+}
+
+setInterval(function(){
+  star();
+},10);
+
+    </script>
+  </body>
+</html>
