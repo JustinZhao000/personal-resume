@@ -5,7 +5,10 @@
 	padding:0;
 	list-style: none;
 }
-
+html{
+	width:100%;
+	overflow-x: hidden;
+}
 a{
 	text-decoration: none;
 	color:#666;
