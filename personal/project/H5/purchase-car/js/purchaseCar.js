@@ -49,20 +49,22 @@ function $(id){
       function bindLi(li,num){
               li.ondragend=function(){
               //
+              var numm;
               var m=0;
               var key=document.querySelectorAll(".godInfo")[num].innerHTML;
               console.log(key);
               var value=document.querySelectorAll(".godPrice")[num].innerHTML;
               localStorage.setItem(key,value);
-              for(num=0;num<localStorage.length;num++){
+              for(numm=0;numm<localStorage.length;numm++){
+                if(key!=localStorage.key(numm).value){                  
+                   ++m;
 
-                if(key!=localStorage.key(num).value){                  
-                   ++m;                               
+                   console.log(localStorage.key(numm));                               
                 }else{                  
                     --m;                  
                 } 
                 $("dnum").innerHTML=m;                
-              }
+               }
               
             }
           }
