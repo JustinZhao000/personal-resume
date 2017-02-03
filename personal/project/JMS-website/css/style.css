@@ -35,6 +35,7 @@ body{
 	top:2px;
 	width:970px;
 	height:90px;
+	overflow: hidden;
 }
 #top_logo{
 	position:absolute;
